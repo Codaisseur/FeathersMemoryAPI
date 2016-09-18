@@ -1,5 +1,7 @@
 'use strict';
 
+const checkWinner = require('./check-winner');
+
 const createGame = require('./create-game');
 
 const globalHooks = require('../../../hooks');
@@ -20,8 +22,8 @@ exports.before = {
   find: [],
   get: [],
   create: [createGame()],
-  update: [],
-  patch: [],
+  update: [checkWinner()],
+  patch: [checkWinner()],
   remove: []
 };
 
