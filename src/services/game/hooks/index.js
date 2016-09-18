@@ -6,6 +6,11 @@ const globalHooks = require('../../../hooks');
 const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
 
+const populateCreatedBy = hooks.populate('createdBy', {
+  service: 'users',
+  field: 'userId'
+});
+
 exports.before = {
   all: [
     auth.verifyToken(),
@@ -22,10 +27,10 @@ exports.before = {
 
 exports.after = {
   all: [],
-  find: [],
-  get: [],
-  create: [],
-  update: [],
-  patch: [],
+  find: [populateCreatedBy],
+  get: [populateCreatedBy],
+  create: [populateCreatedBy],
+  update: [populateCreatedBy],
+  patch: [populateCreatedBy],
   remove: []
 };
