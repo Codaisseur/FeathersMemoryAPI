@@ -11,7 +11,9 @@ module.exports = function(options) {
   options = Object.assign({}, defaults, options);
 
   return function(hook) {
-    const { cards, turn } = hook.data;
+    const cards = hook.data.cards;
+    const turn = hook.data.turn;
+
     const flippedCards = cards.filter((card) => (card.flipped))
     if (flippedCards.length === 2) {
       if (flippedCards[0].symbol === flippedCards[1].symbol) {
