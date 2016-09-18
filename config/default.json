@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/MemoryAPI",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "ZoFrLBwW1vlX/NSioq7hnSfoA8IbVjOvaVbhzR0loLxV4s6Iz3siOfI7c9vvQGBA7lO8tiRTybktO5xzxsPPhQ=="
+    },
+    "local": {}
+  }
+}
